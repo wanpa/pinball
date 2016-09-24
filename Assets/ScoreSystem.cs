@@ -7,8 +7,6 @@ public class ScoreSystem : MonoBehaviour {
 	//スコアを表示するテキスト
 	private GameObject GamePointCount;
 
-	//ボール
-
 	//スコア計算用変数
 	private int score = 0;
 
@@ -20,6 +18,23 @@ public class ScoreSystem : MonoBehaviour {
 	void Update () {
 		//Scoreを画面に表示する
 		this.GamePointCount.GetComponent<Text>().text = "Score:" + score;
+	}
+	void OnCollisionEnter(Collision col)
+	{
+		//接触した相手のtagに応じてスコアを加算する
+		if (col.gameObject.CompareTag("SmallStarTag"))
+		{
+			score += 10;
+		}else if (col.gameObject.CompareTag("LargeStarTag"))
+		{
+			score += 20;
+		}else if(col.gameObject.CompareTag("SmallCloudTag"))
+		{
+			score += 40;
+		}else if (col.gameObject.CompareTag("LargeCloudTag"))
+		{
+			score += 100;
+		}
 	}
 
 
