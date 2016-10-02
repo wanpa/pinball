@@ -25,15 +25,19 @@ public class ScoreSystem : MonoBehaviour {
 		if (col.gameObject.CompareTag("SmallStarTag"))
 		{
 			score += 10;
+			SoundManager.Instance.Play ("audioClip1");
 		}else if (col.gameObject.CompareTag("LargeStarTag"))
 		{
 			score += 20;
+			SoundManager.Instance.Play ("audioClip1");
 		}else if(col.gameObject.CompareTag("SmallCloudTag"))
 		{
 			score += 40;
+			SoundManager.Instance.Play ("audioClip1");
 		}else if (col.gameObject.CompareTag("LargeCloudTag"))
 		{
 			score += 100;
+			SoundManager.Instance.Play ("audioClip1");
 		}
 	}
 
